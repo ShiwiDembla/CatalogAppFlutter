@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tuts/Pages/home_page.dart';
 import 'package:tuts/Pages/login.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tuts/utils/routes.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,15 +30,22 @@ class MyApp extends StatelessWidget {
       darkTheme:
           ThemeData(brightness: Brightness.dark, primarySwatch: Colors.red),
 
+      debugShowCheckedModeBanner: false,
       //default
       // initialRoute: "/home",
       //map like json, key-value pairs, lke dictionary
       routes: {
         // key:pair => object
         //default
+        //hard coded
         "/": (context) => LoginPage(),
-        "/home": (context) => HomePage(),
-        "/login": (context) => LoginPage(),
+        // "/home": (context) => HomePage(),
+        // "/login": (context) => LoginPage(),
+
+        //no need of object creation, only 1 time object created,
+        // so 1 time memory used.
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.loginRoute: (context) => LoginPage(),
       },
     );
   }
