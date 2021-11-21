@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tuts/Pages/home_page.dart';
 import 'package:tuts/Pages/login.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,14 +19,18 @@ class MyApp extends StatelessWidget {
       //choose mode here, light or dark
       themeMode: ThemeMode.light,
       //for light, use any swatch
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        fontFamily: GoogleFonts.lato().fontFamily,
+        // primaryTextTheme: GoogleFonts.latoTextTheme()
+      ),
       //for dark, also choose any color, but when brightness feature used
       //it overrides all the properties
       darkTheme:
           ThemeData(brightness: Brightness.dark, primarySwatch: Colors.red),
 
       //default
-      initialRoute: "/home",
+      // initialRoute: "/home",
       //map like json, key-value pairs, lke dictionary
       routes: {
         // key:pair => object
